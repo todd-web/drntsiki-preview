@@ -461,13 +461,13 @@
             bottom: 0;
             right: 0;
             width: 100%;
-            height: 45%;
+            height: 50%;
             background:
-                linear-gradient(180deg, rgba(245, 243, 240, 0.25) 0%, rgba(245, 243, 240, 0.35) 100%),
+                linear-gradient(180deg, rgba(245, 243, 240, 0.2) 0%, rgba(245, 243, 240, 0.3) 100%),
                 url('damask-bg.jpg');
             background-repeat: no-repeat, repeat;
             background-size: cover, 300px;
-            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
             z-index: 1;
         }
 
@@ -504,14 +504,16 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 40px 0 20px;
+            padding: 30px 0 0;
             width: 100%;
+            min-height: calc(100vh - 64px);
         }
 
-        /* Photo wrapper: positioned to overlap the split boundary */
+        /* Photo wrapper: flush to bottom on mobile */
         .hero-photo-wrapper {
             position: relative;
-            width: 260px;
+            width: 240px;
+            margin-top: auto;
             margin-bottom: 0;
             flex-shrink: 0;
             z-index: 6;
@@ -522,13 +524,15 @@
             width: 100%;
             height: auto;
             display: block;
-            filter: drop-shadow(0 12px 40px rgba(0, 0, 0, 0.3)) drop-shadow(0 4px 12px rgba(233, 59, 124, 0.2));
+            margin-bottom: 0;
+            filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.25)) drop-shadow(0 4px 12px rgba(233, 59, 124, 0.15));
         }
 
         .hero-content {
             max-width: 640px;
             order: 1;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
+            padding: 0 20px;
         }
 
         .hero-badge {
@@ -590,7 +594,8 @@
         .hero-credentials {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
+            align-items: center;
             justify-content: center;
             margin-top: 28px;
         }
@@ -600,11 +605,11 @@
             align-items: center;
             gap: 6px;
             font-family: var(--font-body);
-            font-size: 0.72rem;
+            font-size: 0.8rem;
             font-weight: 500;
             letter-spacing: 0.5px;
             color: var(--white-70);
-            padding: 5px 14px;
+            padding: 7px 16px;
             border: 1px solid var(--white-20);
             border-radius: 20px;
             background: var(--white-05);
@@ -615,6 +620,8 @@
             height: 4px;
             background: var(--white-50);
             border-radius: 50%;
+            align-self: center;
+            flex-shrink: 0;
         }
 
         /* Buttons */
@@ -1289,7 +1296,7 @@
             .hero-photo-wrapper {
                 position: absolute;
                 bottom: 0;
-                left: 68%;
+                left: 65%;
                 transform: translateX(-50%);
                 z-index: 6;
                 width: auto;
@@ -1413,8 +1420,13 @@
             }
 
             .hero-tagline {
-                font-size: 1.15rem;
+                font-size: 1.25rem;
                 padding: 0;
+                max-width: 480px;
+            }
+
+            .hero-credentials {
+                justify-content: flex-start;
             }
 
             .portfolio-grid {
